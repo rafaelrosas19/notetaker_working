@@ -1,0 +1,16 @@
+<section id="gigs" class="container">
+    <h1>All NOTES</h1>
+
+    {{#each notes}}
+    <div class="gig">
+        <h3>{{dataValues.title}}</h3>
+        <p>{{dataValues.description}}</p>
+        <ul>
+            <li><a href="mailto:{{dataValues.contact_email}}" class="btn btn-reverse">Apply Now</a></li>
+        </ul>
+    </div>
+    {{else}}
+    <p>No notes available</p>
+    {{/each}}
+
+</section>

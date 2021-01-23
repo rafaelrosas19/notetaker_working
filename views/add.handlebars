@@ -1,0 +1,29 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+        <h1>Add A Note</h1>
+        <p>Your contact email will be shared with the teacher</p>
+        {{#each errors}}
+        <div class="error">
+            <p>{{text}}</p>
+        </div>
+        {{/each}}
+        <form action="/notes/add" method="POST">
+            <div class="input-group">
+                <label for="title">Note Title</label>
+                <input type="text" name="title" id="title" class="input-box" placeholder="eg. JavaScript, Express, Node"
+                    maxlength="100" value={{title}}>
+            </div>
+            <div class="input-group">
+                <label for="description">Note Description</label>
+                <textarea name="description" id="description" class="input-box"
+                    placeholder="What do we need to save for later?" rows="10">{{description}}</textarea>
+            </div>
+            <div class="input-group">
+                <label for="budget">Contact Email</label>
+                <input type="email" name="contact_email" id="contactemail" class="input-box"
+                    placeholder="Enter an email" value={{contact_email}}>
+            </div>
+            <input type="submit" value="Add Note" class="btn btn-reverse">
+        </form>
+    </div>
+</section>
